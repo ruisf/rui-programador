@@ -1,0 +1,43 @@
+%nav.nav-extended.blue.darken-3
+  .nav-wrapper
+    %a.brand-logo.center{ href: '#' }
+      = image_tag('Icon.png', height: '85%')
+      %span.title Rui Ferreira
+    %a.sidenav-trigger.sidenav-trigger{ href:'#', data: { target: 'mobile-demo'} }
+      %i.material-icons menu
+    %ul#nav-mobile.right.hide-on-med-and-down
+      %li
+        %a{ href: 'sass.html' } Sass
+      %li
+        %a{ href: 'badges.html' } Components
+      %li
+        %a{ href: 'collapsible.html' } JavaScript
+  .nav-content
+    %ul.tabs.tabs-transparent
+      %li.tab
+        %a{ href: '#test1', data: {target: '#test1'} } Test 1
+      %li.tab
+        %a.active{ href: '#test2', data: {target: '#test2'} } Test 2
+      %li.tab.disabled
+        %a{ href: '#test3', data: {target: '#test3'} } Disabled Tab
+      %li.tab
+        %a{ href: '#test4', data: {target: '#test4'} } Test 4
+
+#test1.col.s12 Test 1
+#test2.col.s12 Test 2
+#test3.col.s12 Test 3
+#test4.col.s12 Test 4
+
+%ul#mobile-demo.sidenav
+  %li
+    %a{ href: 'sass.html' } Sass
+  %li
+    %a{ href: 'badges.html' } Components
+  %li
+    %a{ href: 'collapsible.html' } JavaScript
+
+
+:coffee
+  $(document).on 'turbolinks:load', (e) ->
+    $('ul.tabs').tabs()
+    $('.sidenav').sidenav()
